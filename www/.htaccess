@@ -1,0 +1,10 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([\/]?)(ajax)([\/])([a-zA-Z\_]{1,20})$ index.php?ajax=true&require=$4
+RewriteRule ^([\/]?)(post)([\/])([0-9]{1,20})$ index.php?posts=$4
+RewriteRule ^([\/]?)([a-zA-Z\_]{1,20})([\/]?)$ index.php?page=$2
+
+ErrorDocument 404 /index.php?page=404
+ErrorDocument 403 /index.php?page=404

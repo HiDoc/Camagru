@@ -1,0 +1,31 @@
+
+html, body { height: 100%; min-height: 100%; font-family: Roboto;}
+img { max-width: 250px; max-height: 250px; }
+a {color:#a9f1ff;}
+
+.primary { background-color: #337ab7; }
+.success { background-color: #4ca029; }
+
+.navbar {text-align: center;}
+.logo { padding: 0; }
+/*
+ * Background image
+ */
+.body-home, .body-login, .body-signup, .body-explore, .body-picture {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.body-home, .body-signup {
+  background-image: url("../img/background.jpg");
+}
+.body-explore {
+  background-image: url("../img/background2.jpg");
+}
+.body-login {
+  background-image: url("../img/login-background.jpg");
+}
+.body-picture {
+  background-image: url("../img/background4.jpg");
+}
+.form-control {background-color: #ffffff80;border:none}
+.alert-danger {background-color: #f8856f !important;border:none}
