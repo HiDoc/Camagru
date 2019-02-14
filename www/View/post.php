@@ -37,18 +37,21 @@
       };
       document.getElementById('comment').addEventListener('click', function(event) {
         content = document.getElementById('mycomment').value.trim()
-        request({
-          url: "/ajax/comment",
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, 
-          method: "POST",
-          body: 'id=10&content=' + content +'&submit=true'
-        })
-        .then(success => {
-          let div = document.createElement('div')
-          div.classList.add("row")
-          div.innerHTML = success
-          document.getElementById('comments').appendChild(div)
-        })
+        if (content !== '')
+        {
+          request({
+            url: "/ajax/comment",
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, 
+            method: "POST",
+            body: 'id='+ <?= $_GET['posts'] ?> + '&content=' + content +'&submit=true'
+          })
+          .then(success => {
+            let div = document.createElement('div')
+            div.classList.add("row")
+            div.innerHTML = success
+            document.getElementById('comments').appendChild(div)
+          })
+        }
       })
     </script>
 <?php endif;?>

@@ -24,6 +24,7 @@ function hydrateComments() {
   $query = $db->query("SELECT u.username, c.content, c.created
                       FROM pictures p, users u, comment c 
                       WHERE u.id_user = c.user_id
+                      AND c.pict_id = p.id_pict
                       AND p.id_pict = ". $_GET['posts']);
   while ($result = $query->fetch(PDO::FETCH_ASSOC))
   {

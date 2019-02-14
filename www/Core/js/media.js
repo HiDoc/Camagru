@@ -42,3 +42,4 @@ function convertCanvasToImage(canvas) {
 	img.src = canvas.toDataURL("image/png");
 	return img;
 }
+addFilter('wouf');

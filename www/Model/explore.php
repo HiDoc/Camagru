@@ -9,7 +9,7 @@
       (SELECT count(*) FROM comment c where p.id_pict = c.pict_id) AS comment
       FROM pictures p, users u WHERE u.id_user = p.user_id "
       . ($user !== false ? 'AND u.id_user <> ' . $user->getId_user() : '')
-      . " ORDER BY likes LIMIT 12 ");
+      . " ORDER BY likes");
     if ($query !== false)
     {
       while ($result = $query->fetch(PDO::FETCH_ASSOC))

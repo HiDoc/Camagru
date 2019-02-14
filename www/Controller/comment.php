@@ -8,7 +8,7 @@
       $content = htmlspecialchars($_POST['content']);
       $user = unserialize($_SESSION['user']);
       $query = $db->prepare("INSERT INTO comment values(default, :id_pict, :id_user, :content, default)");
-      $query->bindValue(":id_pict", $id, PDO::PARAM_INT);
+      $query->bindValue(":id_pict", intval($id), PDO::PARAM_INT);
       $query->bindValue(":id_user", $user->getId_user(), PDO::PARAM_INT);
       $query->bindValue(":content", htmlspecialchars($content), PDO::PARAM_STR);
       if ($result = $query->execute())

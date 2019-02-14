@@ -40,7 +40,7 @@ class User {
       $query->execute();
       return ($query->rowCount() > 0);
     }
-
+    
     static public function verify($username, $password){
       $db = $GLOBALS['db'];
       $username = htmlspecialchars($username);
@@ -115,7 +115,7 @@ class User {
     public function getLocation() { return $this->_location; }
     public function getActive() { return $this->_active; }
     public function getPosts() { return $this->_posts; }
-
+    
 }
 
  ?>

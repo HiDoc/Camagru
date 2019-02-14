@@ -17,7 +17,7 @@
     }
     else if (!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', $_POST['password']))
       echoError("Invalid Password");
-    else if (!preg_match('/^\w{5,20}$/', $username))
+    else if (!preg_match('/^\w{5,20}$/', $_POST['username']))
       echoError("Username must be alpha and contains between 5 and 20 characters");
     else
       if (($error = create_new_user($_POST)) === true) :

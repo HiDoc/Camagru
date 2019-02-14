@@ -2,7 +2,7 @@
 
 class db extends PDO
 {
-    public function __construct($file = "config/my_settings.ini")
+    public function __construct($file = "config/php/php.ini")
     {
         if (!$settings = parse_ini_file($file, TRUE))
           throw new exception('Unable to open ' . $file . '.');
